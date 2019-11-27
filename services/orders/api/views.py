@@ -14,7 +14,7 @@ def add_order(request):
 	order.customer_email = request.data["customer_email"]
 	order.items = []
 
-	print(request.data)
+	print((request.data))
 
 	for product in request.data["products_id"]:
 		response = requests.get("http://127.0.0.1:8001/products/fetch/?prod_id=%s" % product).json()
